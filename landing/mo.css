@@ -1,0 +1,2085 @@
+/* ==========================================================
+   INFINYT 3D - CLEAN CSS
+   RESET + VARIABLES + BODY + BACKGROUND
+========================================================== */
+
+*,
+*::before,
+*::after{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+
+    --bg:#020617;
+    --bg2:#06152d;
+
+    --primary:#00d9ff;
+    --secondary:#008cff;
+    --accent:#00ffd5;
+
+    --white:#ffffff;
+    --text:#d9f7ff;
+    --glass:rgba(255,255,255,.05);
+    --glass-border:rgba(255,255,255,.10);
+
+    --shadow:0 20px 60px rgba(0,0,0,.45);
+
+    --transition:.35s ease;
+
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:Poppins,sans-serif;
+
+    background:var(--bg);
+
+    color:var(--white);
+
+    overflow:hidden;
+
+    cursor:none;
+
+}
+
+/* ==========================================================
+   THREE BACKGROUND
+========================================================== */
+
+#bgCanvas{
+
+    position:fixed;
+
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    z-index:-2;
+
+}
+
+/* ==========================================================
+   ANIMATED BACKGROUND
+========================================================== */
+
+.background{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-1;
+
+    background:
+
+    radial-gradient(circle at top,
+    rgba(0,71,255,.15),
+    transparent 45%),
+
+    radial-gradient(circle at bottom,
+    rgba(0,229,255,.12),
+    transparent 50%),
+
+    linear-gradient(
+        135deg,
+        #020617,
+        #06152d,
+        #010409
+    );
+
+    background-size:200% 200%;
+
+    animation:bgMove 14s ease infinite;
+
+}
+
+@keyframes bgMove{
+
+    0%{
+        background-position:left top;
+    }
+
+    50%{
+        background-position:right bottom;
+    }
+
+    100%{
+        background-position:left top;
+    }
+
+}
+.hero{
+
+    width:100%;
+    height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+
+    padding:0;
+}
+.logo-container{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+
+    position:relative;
+
+}
+
+
+/* ==========================================================
+   DEFAULT TEXT
+========================================================== */
+
+h1{
+
+    font-size:70px;
+
+    font-weight:700;
+
+    letter-spacing:8px;
+
+}
+
+p{
+
+    margin-top:15px;
+
+    font-size:20px;
+
+    line-height:1.7;
+
+    color:var(--text);
+
+}
+
+/* ==========================================================
+   BUTTONS
+========================================================== */
+
+button{
+
+    margin-top:40px;
+
+    padding:18px 42px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:transparent;
+
+    color:#fff;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    border:2px solid var(--primary);
+
+    cursor:pointer;
+
+    transition:all .35s ease;
+
+}
+
+button:hover{
+
+    background:var(--primary);
+
+    color:#000;
+
+    transform:translateY(-6px);
+
+    box-shadow:
+        0 0 25px var(--primary),
+        0 0 60px rgba(0,217,255,.35);
+
+}
+
+button:active{
+
+    transform:scale(.96);
+
+}
+.split-logo{
+
+    position:relative;
+
+    width:300px;
+    height:300px;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    overflow:hidden;
+
+    border-radius:0;
+
+    background:none;
+
+}
+
+/* ==========================================================
+   LOGO HALVES
+========================================================== */
+
+.half{
+
+    width:50%;
+    height:100%;
+
+    position:relative;
+
+    overflow:hidden;
+}
+/* Image */
+
+.half img{
+
+    position:absolute;
+
+    width:700px;
+    height:700px;
+
+    object-fit:contain;
+
+    top:0;
+
+    left:0;
+}
+
+.left-half img{
+    left:0;
+}
+
+.right-half img{
+    left:-350px;
+}
+
+/* ==========================================================
+   SPLIT ANIMATION
+========================================================== */
+
+.split-logo{
+
+    position:relative;
+
+    width:700px;
+    height:700px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    overflow:hidden;
+
+    margin:auto;
+}
+
+/* ==========================================================
+   ENERGY LINE
+========================================================== */
+
+.split-logo::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:50%;
+
+    width:2px;
+
+    height:100%;
+
+    transform:translateX(-50%);
+
+    background:linear-gradient(
+
+        to bottom,
+
+        transparent,
+
+        var(--primary),
+
+        white,
+
+        var(--primary),
+
+        transparent
+
+    );
+
+    opacity:0;
+
+    box-shadow:
+
+        0 0 10px var(--primary),
+
+        0 0 30px var(--primary),
+
+        0 0 60px var(--primary);
+
+}
+
+/* Show energy line */
+
+.split-active .split-logo::after{
+
+    opacity:1;
+
+    animation:
+
+        pulseLine 1s infinite,
+
+        energyFlash .8s ease;
+
+}
+
+/* ==========================================================
+   PARTICLES DURING SPLIT
+========================================================== */
+
+.split-logo::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(circle,
+
+    rgba(0,255,255,.25),
+
+    transparent 70%);
+
+    opacity:0;
+
+    transform:scale(.7);
+
+}
+
+.split-active .split-logo::before{
+
+    opacity:1;
+
+    animation:energyWave 1.2s ease forwards;
+
+}
+
+/* ==========================================================
+   ANIMATIONS
+========================================================== */
+
+@keyframes pulseLine{
+
+    0%{
+
+        box-shadow:
+
+        0 0 8px cyan,
+
+        0 0 20px cyan;
+
+    }
+
+    50%{
+
+        box-shadow:
+
+        0 0 20px cyan,
+
+        0 0 60px cyan,
+
+        0 0 100px cyan;
+
+    }
+
+    100%{
+
+        box-shadow:
+
+        0 0 8px cyan,
+
+        0 0 20px cyan;
+
+    }
+
+}
+
+@keyframes energyFlash{
+
+    from{
+
+        opacity:0;
+
+        transform:translateX(-50%) scaleY(.2);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateX(-50%) scaleY(1);
+
+    }
+
+}
+
+@keyframes energyWave{
+
+    0%{
+
+        opacity:.7;
+
+        transform:scale(.5);
+
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:scale(2);
+
+    }
+
+}
+/* ==========================================================
+   SPLIT CONTAINER
+========================================================== */
+
+.split-container{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    z-index:900;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+}
+
+/* Active */
+
+.split-container.active{
+
+    pointer-events:auto;
+
+}
+
+/* ==========================================================
+   SPLIT PANELS
+========================================================== */
+
+.split{
+
+    position:relative;
+
+    width:50%;
+
+    height:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    overflow:hidden;
+
+    transition:
+        transform 1.2s cubic-bezier(.77,0,.18,1),
+        filter .4s ease,
+        box-shadow .4s ease;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    box-shadow:
+
+        inset 0 0 60px rgba(255,255,255,.05),
+
+        0 20px 60px rgba(0,0,0,.35);
+
+}
+
+/* ==========================================================
+   PANEL BACKGROUNDS
+========================================================== */
+
+.left{
+
+    background:
+
+        linear-gradient(
+
+        135deg,
+
+        rgba(0,27,61,.95),
+
+        rgba(0,65,145,.92)
+
+        );
+
+    transform:translateX(-100%);
+
+}
+
+.right{
+
+    background:
+
+        linear-gradient(
+
+        135deg,
+
+        rgba(0,45,45,.95),
+
+        rgba(0,180,170,.90)
+
+        );
+
+    transform:translateX(100%);
+
+}
+
+/* ==========================================================
+   OPEN PANELS
+========================================================== */
+
+.split-container.active .left{
+
+    transform:translateX(0);
+
+}
+
+.split-container.active .right{
+
+    transform:translateX(0);
+
+}
+
+/* ==========================================================
+   PANEL GLOW
+========================================================== */
+
+.split::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    linear-gradient(
+
+    120deg,
+
+    transparent,
+
+    rgba(255,255,255,.08),
+
+    transparent
+
+    );
+
+    opacity:0;
+
+    transition:.5s;
+
+}
+
+.split:hover::before{
+
+    opacity:1;
+
+}
+
+.split:hover{
+
+    filter:brightness(1.15);
+
+    transform:scale(1.02);
+
+}
+
+.left:hover{
+
+    box-shadow:
+
+        0 0 70px rgba(0,140,255,.35),
+
+        inset 0 0 60px rgba(255,255,255,.05);
+
+}
+
+.right:hover{
+
+    box-shadow:
+
+        0 0 70px rgba(0,255,200,.35),
+
+        inset 0 0 60px rgba(255,255,255,.05);
+
+}
+
+/* ==========================================================
+   PANEL TEXT
+========================================================== */
+
+.split h2{
+
+    font-size:58px;
+
+    font-weight:800;
+
+    letter-spacing:6px;
+
+    text-transform:uppercase;
+
+    margin-bottom:15px;
+
+    color:#fff;
+
+    text-shadow:
+
+        0 0 25px rgba(0,255,255,.4);
+
+    transition:.35s;
+
+}
+
+.split p{
+
+    width:70%;
+
+    font-size:20px;
+
+    line-height:1.8;
+
+    color:#d9f8ff;
+
+    opacity:.9;
+
+    transition:.35s;
+
+}
+
+.split:hover h2{
+
+    transform:translateY(-8px);
+
+}
+
+.split:hover p{
+
+    transform:translateY(-4px);
+
+    opacity:1;
+
+}
+
+/* ==========================================================
+   PAGE SYSTEM
+========================================================== */
+
+.pages{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    z-index:950;
+
+    pointer-events:none;
+
+}
+
+.pages.active{
+
+    pointer-events:auto;
+
+}
+
+/* ==========================================================
+   INDIVIDUAL PAGE
+========================================================== */
+
+.page{
+
+    position:relative;
+
+    width:50%;
+
+    height:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    opacity:0;
+
+    transform:scale(1.08);
+
+    transition:
+
+        opacity .8s ease,
+
+        transform .8s ease;
+
+}
+
+/* Show */
+
+.pages.active .page{
+
+    opacity:1;
+
+    transform:scale(1);
+
+}
+
+/* Backgrounds */
+
+.steam{
+
+    background:
+
+    linear-gradient(
+
+    135deg,
+
+    #001a3a,
+
+    #003d7c
+
+    );
+
+}
+
+.design{
+
+    background:
+
+    linear-gradient(
+
+    135deg,
+
+    #003b2f,
+
+    #00bea9
+
+    );
+
+}
+
+/* ==========================================================
+   PAGE CONTENT
+========================================================== */
+
+.page h1{
+
+    font-size:65px;
+
+    font-weight:800;
+
+    letter-spacing:5px;
+
+    text-transform:uppercase;
+
+    color:#fff;
+
+    text-shadow:
+
+        0 0 35px rgba(0,255,255,.35);
+
+}
+
+.page p{
+
+    width:75%;
+
+    margin-top:20px;
+
+    font-size:20px;
+
+    line-height:1.8;
+
+    color:#d9f8ff;
+
+}
+
+/* ==========================================================
+   PAGE BUTTON
+========================================================== */
+
+.page button{
+
+    margin-top:40px;
+
+    padding:16px 40px;
+
+    border-radius:50px;
+
+    border:2px solid white;
+
+    background:transparent;
+
+    color:#fff;
+
+    font-size:17px;
+
+    transition:.35s;
+
+}
+
+.page button:hover{
+
+    background:white;
+
+    color:#000;
+
+    transform:translateY(-5px);
+
+    box-shadow:
+
+        0 10px 35px rgba(255,255,255,.35);
+
+}
+/* ==========================================================
+   APPLE VISION PRO GLASS UI
+========================================================== */
+
+.page,
+.split,
+.card,
+.modal-content{
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:rgba(255,255,255,.06);
+
+    border:1px solid rgba(255,255,255,.10);
+
+    backdrop-filter:blur(22px);
+
+    -webkit-backdrop-filter:blur(22px);
+
+    box-shadow:
+
+        0 20px 60px rgba(0,0,0,.45),
+
+        inset 0 1px 1px rgba(255,255,255,.15),
+
+        inset 0 -1px 1px rgba(255,255,255,.05);
+
+}
+
+/* Moving Reflection */
+
+.page::before,
+.split::before,
+.card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,.12),
+        transparent
+    );
+
+    transform:translateX(-120%);
+
+    transition:.8s;
+
+}
+
+.page:hover::before,
+.split:hover::before,
+.card:hover::before{
+
+    transform:translateX(120%);
+
+}
+
+/* ==========================================================
+   GRID
+========================================================== */
+
+.grid{
+
+    width:85%;
+
+    margin:50px auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:30px;
+
+}
+
+/* ==========================================================
+   PRODUCT CARD
+========================================================== */
+
+.card{
+
+    padding:30px;
+
+    border-radius:20px;
+
+    cursor:pointer;
+
+    transition:
+
+        transform .4s ease,
+
+        box-shadow .4s ease,
+
+        background .4s ease;
+
+}
+
+/* Card Image */
+
+.card img{
+
+    width:100%;
+
+    height:220px;
+
+    object-fit:cover;
+
+    border-radius:15px;
+
+    margin-bottom:20px;
+
+    transition:.5s;
+
+}
+
+/* Card Title */
+
+.card h3{
+
+    font-size:28px;
+
+    margin-bottom:12px;
+
+    color:white;
+
+}
+
+/* Card Text */
+
+.card p{
+
+    margin:0;
+
+    color:#dff;
+
+    font-size:17px;
+
+    line-height:1.7;
+
+}
+
+/* Hover */
+
+.card:hover{
+
+    transform:
+
+        translateY(-10px)
+
+        scale(1.03);
+
+    background:rgba(0,255,255,.08);
+
+    box-shadow:
+
+        0 0 35px rgba(0,255,255,.30),
+
+        0 25px 60px rgba(0,0,0,.40);
+
+}
+
+.card:hover img{
+
+    transform:scale(1.08);
+
+}
+
+/* ==========================================================
+   CARD BUTTON
+========================================================== */
+
+.card button{
+
+    margin-top:25px;
+
+    width:100%;
+
+}
+
+/* ==========================================================
+   FEATURE ICON
+========================================================== */
+
+.icon{
+
+    width:70px;
+
+    height:70px;
+
+    margin-bottom:20px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:50%;
+
+    background:rgba(0,255,255,.08);
+
+    color:cyan;
+
+    font-size:32px;
+
+    transition:.4s;
+
+}
+
+.card:hover .icon{
+
+    transform:rotate(360deg) scale(1.15);
+
+    background:rgba(0,255,255,.18);
+
+}
+
+/* ==========================================================
+   STATS
+========================================================== */
+
+.stats{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:40px;
+
+    margin-top:60px;
+
+    flex-wrap:wrap;
+
+}
+
+.stat{
+
+    text-align:center;
+
+}
+
+.stat h2{
+
+    font-size:60px;
+
+    color:cyan;
+
+    text-shadow:0 0 20px cyan;
+
+}
+
+.stat span{
+
+    display:block;
+
+    margin-top:10px;
+
+    color:#ccefff;
+
+    font-size:18px;
+
+}
+
+/* ==========================================================
+   SECTION TITLE
+========================================================== */
+
+.section-title{
+
+    font-size:58px;
+
+    text-align:center;
+
+    margin-bottom:15px;
+
+    text-transform:uppercase;
+
+    letter-spacing:5px;
+
+}
+
+.section-subtitle{
+
+    width:70%;
+
+    margin:auto;
+
+    text-align:center;
+
+    color:#cfefff;
+
+    font-size:20px;
+
+    line-height:1.8;
+
+    margin-bottom:60px;
+
+}
+
+/* ==========================================================
+   FLOATING GLOW BALLS
+========================================================== */
+
+.glow{
+
+    position:fixed;
+
+    border-radius:50%;
+
+    filter:blur(130px);
+
+    opacity:.35;
+
+    z-index:-1;
+
+}
+
+.glow1{
+
+    width:380px;
+
+    height:380px;
+
+    top:-120px;
+
+    left:-100px;
+
+    background:#008cff;
+
+    animation:moveGlow1 14s infinite alternate;
+
+}
+
+.glow2{
+
+    width:420px;
+
+    height:420px;
+
+    bottom:-150px;
+
+    right:-120px;
+
+    background:#00ffd5;
+
+    animation:moveGlow2 12s infinite alternate;
+
+}
+
+@keyframes moveGlow1{
+
+    to{
+
+        transform:
+
+        translate(180px,140px);
+
+    }
+
+}
+
+@keyframes moveGlow2{
+
+    to{
+
+        transform:
+
+        translate(-180px,-140px);
+
+    }
+
+}
+
+/* ==========================================================
+   HOVER GLOW
+========================================================== */
+
+.glow-border{
+
+    position:relative;
+
+}
+
+.glow-border::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-2px;
+
+    border-radius:inherit;
+
+    background:
+
+    linear-gradient(
+
+        90deg,
+
+        cyan,
+
+        transparent,
+
+        cyan
+
+    );
+
+    opacity:0;
+
+    filter:blur(12px);
+
+    transition:.4s;
+
+    z-index:-1;
+
+}
+
+.glow-border:hover::after{
+
+    opacity:1;
+
+}
+/* ==========================================================
+   PREMIUM CUSTOM CURSOR
+========================================================== */
+
+.cursor{
+
+    position:fixed;
+
+    width:18px;
+    height:18px;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+    pointer-events:none;
+
+    transform:translate(-50%,-50%);
+
+    z-index:99999;
+
+    box-shadow:
+        0 0 10px var(--primary),
+        0 0 25px var(--primary),
+        0 0 60px rgba(0,217,255,.5);
+
+    transition:
+        width .2s ease,
+        height .2s ease,
+        background .3s ease,
+        transform .08s linear;
+
+}
+
+/* Cursor Ring */
+
+.cursor-ring{
+
+    position:fixed;
+
+    width:48px;
+    height:48px;
+
+    border-radius:50%;
+
+    border:1.5px solid rgba(0,217,255,.4);
+
+    pointer-events:none;
+
+    transform:translate(-50%,-50%);
+
+    z-index:99998;
+
+    transition:
+        transform .15s ease,
+        width .25s ease,
+        height .25s ease,
+        border-color .3s ease;
+
+}
+
+/* Hover State */
+
+.cursor.active{
+
+    width:30px;
+
+    height:30px;
+
+    background:white;
+
+}
+
+.cursor-ring.active{
+
+    width:70px;
+
+    height:70px;
+
+    border-color:cyan;
+
+}
+
+/* ==========================================================
+   MAGNETIC BUTTONS
+========================================================== */
+
+button{
+
+    position:relative;
+
+    overflow:hidden;
+
+    isolation:isolate;
+
+}
+
+button::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    radial-gradient(circle at center,
+
+    rgba(255,255,255,.18),
+
+    transparent 70%);
+
+    opacity:0;
+
+    transition:.4s;
+
+    z-index:-1;
+
+}
+
+button:hover::before{
+
+    opacity:1;
+
+}
+
+/* Ripple */
+
+button::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:0;
+
+    height:0;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.2);
+
+    left:50%;
+
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    transition:.5s;
+
+}
+
+button:hover::after{
+
+    width:320px;
+
+    height:320px;
+
+}
+
+/* ==========================================================
+   HOLOGRAPHIC OBJECTS
+========================================================== */
+
+.holo-layer{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:0;
+
+    overflow:hidden;
+
+}
+
+/* Base */
+
+.holo{
+
+    position:absolute;
+
+    opacity:.18;
+
+    filter:
+
+        drop-shadow(0 0 25px cyan);
+
+    animation:
+
+        holoFloat 10s ease-in-out infinite;
+
+}
+
+/* Cube */
+
+.cube{
+
+    width:70px;
+
+    height:70px;
+
+    top:18%;
+
+    left:8%;
+
+    border:2px solid cyan;
+
+    transform:rotate(45deg);
+
+}
+
+/* Ring */
+
+.ring{
+
+    width:90px;
+
+    height:90px;
+
+    top:62%;
+
+    right:10%;
+
+    border:2px solid cyan;
+
+    border-radius:50%;
+
+}
+
+/* Triangle */
+
+.triangle{
+
+    bottom:14%;
+
+    left:42%;
+
+    width:0;
+
+    height:0;
+
+    border-left:35px solid transparent;
+
+    border-right:35px solid transparent;
+
+    border-bottom:60px solid cyan;
+
+}
+
+/* Small Circle */
+
+.circle{
+
+    width:35px;
+
+    height:35px;
+
+    border-radius:50%;
+
+    border:2px solid cyan;
+
+    top:32%;
+
+    right:25%;
+
+}
+
+/* Animation */
+
+@keyframes holoFloat{
+
+    0%{
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+    }
+
+    50%{
+
+        transform:
+            translateY(-35px)
+            rotate(180deg);
+
+    }
+
+    100%{
+
+        transform:
+            translateY(0)
+            rotate(360deg);
+
+    }
+
+}
+
+/* ==========================================================
+   MODAL
+========================================================== */
+
+.modal{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    visibility:hidden;
+
+    opacity:0;
+
+    background:rgba(0,0,0,.75);
+
+    backdrop-filter:blur(12px);
+
+    transition:.35s;
+
+    z-index:9999;
+
+}
+
+/* Show */
+
+.modal.active{
+
+    visibility:visible;
+
+    opacity:1;
+
+}
+
+/* Content */
+
+.modal-content{
+
+    width:min(700px,90%);
+
+    padding:45px;
+
+    border-radius:25px;
+
+    text-align:center;
+
+    color:white;
+
+    transform:translateY(30px);
+
+    transition:.4s;
+
+}
+
+.modal.active .modal-content{
+
+    transform:translateY(0);
+
+}
+
+/* Close */
+
+.close{
+
+    position:absolute;
+
+    top:18px;
+
+    right:22px;
+
+    font-size:32px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.close:hover{
+
+    color:var(--primary);
+
+    transform:rotate(180deg);
+
+}
+
+/* ==========================================================
+   FADE ANIMATION
+========================================================== */
+
+.fade-up{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:all .8s ease;
+
+}
+
+.fade-up.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+/* ==========================================================
+   LARGE LAPTOPS
+========================================================== */
+
+@media (max-width:1400px){
+
+    .title{
+        font-size:60px;
+    }
+
+    .page h1,
+    .split h2{
+        font-size:54px;
+    }
+
+}
+
+/* ==========================================================
+   LAPTOP
+========================================================== */
+
+@media (max-width:1200px){
+
+    .grid{
+        width:92%;
+        gap:25px;
+    }
+
+    .title{
+        font-size:55px;
+        letter-spacing:8px;
+    }
+
+    .page h1,
+    .split h2{
+        font-size:48px;
+    }
+
+    .section-title{
+        font-size:50px;
+    }
+
+}
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width:992px){
+
+    .hero{
+
+        padding:40px;
+
+    }
+
+    .glass-ring{
+
+        width:260px;
+        height:260px;
+
+    }
+
+    .logo{
+
+        width:140px;
+
+    }
+
+    .title{
+
+        font-size:46px;
+
+        letter-spacing:6px;
+
+    }
+
+    .subtitle{
+
+        font-size:18px;
+
+    }
+
+    .grid{
+
+        grid-template-columns:1fr;
+
+        width:90%;
+
+    }
+
+    .stats{
+
+        gap:25px;
+
+    }
+
+}
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width:768px){
+
+    body{
+
+        cursor:auto;
+
+        overflow-x:hidden;
+
+    }
+
+    .cursor,
+    .cursor-ring{
+
+        display:none;
+
+    }
+
+    .hero{
+
+        padding:20px;
+
+    }
+
+    .logo{
+
+        width:110px;
+
+    }
+
+    .glass-ring{
+
+        width:220px;
+
+        height:220px;
+
+    }
+
+    .title{
+
+        font-size:34px;
+
+        letter-spacing:4px;
+
+    }
+
+    .subtitle{
+
+        font-size:16px;
+
+        letter-spacing:1px;
+
+    }
+
+    h1,
+    .page h1,
+    .split h2{
+
+        font-size:30px;
+
+    }
+
+    p,
+    .page p,
+    .split p{
+
+        width:90%;
+
+        font-size:16px;
+
+        line-height:1.6;
+
+    }
+
+    button{
+
+        padding:14px 30px;
+
+        font-size:15px;
+
+    }
+
+    .split-container,
+    .pages{
+
+        flex-direction:column;
+
+    }
+
+    .split,
+    .page{
+
+        width:100%;
+
+        height:50%;
+
+    }
+
+    .grid{
+
+        width:95%;
+
+        grid-template-columns:1fr;
+
+    }
+
+    .card{
+
+        padding:20px;
+
+    }
+
+    .card img{
+
+        height:180px;
+
+    }
+
+    .stats{
+
+        flex-direction:column;
+
+        gap:20px;
+
+    }
+
+    .modal-content{
+
+        width:92%;
+
+        padding:30px;
+
+    }
+
+}
+
+/* ==========================================================
+   SMALL MOBILE
+========================================================== */
+
+@media (max-width:480px){
+
+    .title{
+
+        font-size:28px;
+
+    }
+
+    .subtitle{
+
+        font-size:14px;
+
+    }
+
+    .logo{
+
+        width:90px;
+
+    }
+
+    .glass-ring{
+
+        width:180px;
+
+        height:180px;
+
+    }
+
+    button{
+
+        width:100%;
+
+    }
+
+    .section-title{
+
+        font-size:34px;
+
+    }
+
+}
+
+/* ==========================================================
+   PERFORMANCE
+========================================================== */
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+img{
+
+    display:block;
+
+    max-width:100%;
+
+}
+
+button,
+.card,
+.logo,
+.split,
+.page{
+
+    will-change:transform;
+
+}
+
+::selection{
+
+    background:cyan;
+
+    color:black;
+
+}
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#071321;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:cyan;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#00ffd5;
+
+}

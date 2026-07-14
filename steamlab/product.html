@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Infinyt3D | Imagine • Innovate • Inspire</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="p.css">
+
+</head>
+
+<body>
+  <!-- ================= LOADER ================= -->
+
+<div id="loader">
+
+    <div class="loader-ring"></div>
+
+    <h2>INFINYT<span>3D</span></h2>
+
+</div>
+
+<!-- Scroll Progress -->
+
+<div id="progressBar"></div>
+
+<!-- Back To Top -->
+
+<button id="topBtn">
+
+↑
+
+</button>
+
+<!-- Background Particles -->
+
+<div id="particles"></div>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+<div class="logo">
+
+<img src="i3d-round.png" alt="Infinyt3D">
+
+<div>
+
+<h2>INFINYT3D <spam>Pvt.</spam> <spam>Ltd.</spam></h2>
+
+
+
+
+</div>
+
+</div>
+
+<nav>
+
+
+<a href="About.html">Home</a>
+        
+
+<a href="product.html">STEAM Project</a>
+
+<a href="contact.html">Contact</a>
+
+
+<a href="#" class="contact-btn">Get in Touch</a>
+
+</nav>
+
+</header>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+<div class="hero-left">
+
+<h4>POWERING FUTURE INNOVATORS</h4>
+
+<h1>
+
+Build
+
+<span>•</span>
+
+Learn
+
+<span>•</span>
+
+Innovate
+
+</h1>
+
+<p>
+
+Empower students with Robotics Kits and advanced
+Eureka 3D Printing technology.
+
+Turn ideas into real-world inventions through
+STEAM learning.
+
+</p>
+
+<div class="hero-buttons">
+
+<a href="#" class="primary-btn">
+
+Explore Products
+
+</a>
+
+<a href="#" class="secondary-btn">
+
+Watch Demo
+
+</a>
+
+</div>
+
+</div>
+
+<div class="hero-right">
+
+<div class="hero-circle"></div>
+
+<img src="illustrate.webp" alt="Student">
+
+</div>
+
+</section>
+<!-- ================= PRODUCTS ================= -->
+
+<section class="products">
+
+    <div class="section-title">
+
+        <div class="line"></div>
+
+        <h2>Our <span>STEAM</span> Products</h2>
+
+        <div class="line"></div>
+
+    </div>
+
+    <div class="product-grid">
+
+        <!-- Robotics -->
+
+       <div class="product-card">
+
+    <div class="product-image">
+        <img src="data:image/webp;base64,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" alt="STEAM Lab Setup">
+    </div>
+
+    <div class="product-content">
+
+        <h2>STEAM Lab Setup</h2>
+
+        <p>
+            Build a complete future-ready STEAM Lab for schools with Robotics,
+            AI, Coding, Electronics, IoT, 3D Printing, and hands-on STEM
+            learning solutions designed to inspire innovation.
+        </p>
+
+        <div class="features">
+
+            
+
+            <div class="feature">
+                <div class="icon">💻</div>
+                <span>Coding</span>
+            </div>
+
+            <div class="feature">
+                <div class="icon">🖨️</div>
+                <span>3D Printing</span>
+            </div>
+
+            
+
+           
+
+            <div class="feature">
+                <div class="icon">🧠</div>
+                <span>Artificial Intelligence</span>
+            </div>
+
+        </div>
+
+        <a href="steamlab.html" class="learn-btn">
+            Explore STEAM Lab →
+        </a>
+
+    </div>
+
+</div>
+
+        <!-- Printer -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <img src="Jul 13, 2026, 01_44_17 PM.png" alt="">
+
+            </div>
+
+            <div class="product-content">
+
+                <h2>Eureka STEAM Workstation </h2>
+
+                <p>
+
+                    Powerful educational 3D printer
+                    for schools, colleges and makers.
+
+                </p>
+
+                <div class="features">
+
+                    <div class="feature">
+
+                        <div class="icon">🎯</div>
+
+                        <span>Precision</span>
+
+                    </div>
+
+                    <div class="feature">
+
+                        <div class="icon">👨‍🎓</div>
+
+                        <span>Students</span>
+
+                    </div>
+
+                    <div class="feature">
+
+                        <div class="icon">🧩</div>
+
+                        <span>STEAM</span>
+
+                    </div>
+
+                </div>
+
+                <a href="#" class="learn-btn">
+
+                    Learn More →
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+        <div class="line"></div>
+
+        
+
+        <div class="line"></div>
+
+    </div>
+
+    <div class="product-grid">
+
+        
+
+       <div class="product-card">
+
+    <div class="product-image">
+        <img src="ChatGPT Image Jul 13, 2026, 01_58_01 PM.png" alt="">
+    </div>
+
+    <div class="product-content">
+
+        <h2>Teacher Training</h2>
+
+        <p>
+            Empower educators with comprehensive hands-on training in Robotics,
+            Artificial Intelligence, Coding, 3D Printing, and STEM education.
+            Our expert-led workshops help teachers confidently deliver engaging,
+            project-based learning experiences.
+        </p>
+
+        <div class="features">
+
+            
+
+           <div class="feature">
+                <div class="icon">👩‍🏫</div>
+                <span>Expert Workshops</span>
+            </div>
+
+            <div class="feature">
+                <div class="icon">📚</div>
+                <span>Lesson Planning</span>
+            </div>
+
+            <div class="feature">
+                <div class="icon">🎓</div>
+                <span>Certification</span>
+            </div>
+        </div>
+
+        <a href="steamlab.html" class="learn-btn">
+            Explore STEAM Lab →
+        </a>
+
+    </div>
+
+</div>
+
+        <!-- Printer -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <img src="https://copilot.microsoft.com/th/id/BCO.f748bec0-351e-4361-b205-ab324825ea7b.png" alt="">
+
+            </div>
+
+            <div class="product-content">
+
+                <h2>Curriculum Advisor </h2>
+
+                <p>
+
+                    Powerful educational 3D printer
+                    for schools, colleges and makers.
+
+                </p>
+
+                <div class="features">
+
+                    <div class="feature">
+
+                        <div class="icon">📘</div>
+
+                        <span>STEAM Curriculum</span>
+
+                     </div>
+                   
+
+
+                     <div class="feature">
+
+                        <div class="icon">📝</div>
+
+                        <span>Lesson Planning</span>
+
+                    </div>
+
+
+
+                    <div class="feature">
+
+                        <div class="icon">🎯</div>
+
+                        <span>School Implementation</span>
+ 
+                
+
+                    </div>
+
+                </div>
+
+                <a href="#" class="learn-btn">
+
+                    Learn More →
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+</section>
+<!-- ================= ABOUT SECTION ================= -->
+
+<section class="about">
+
+    <div class="about-left">
+
+        <div class="about-image">
+
+            <img src="ChatGPT Image Jul 13, 2026, 02_28_42 PM.png" alt="STEAM Lab">
+
+        </div>
+
+    </div>
+
+    <div class="about-right">
+
+        <h5>ABOUT INFINYT3D</h5>
+
+        <h2>
+            Empowering Students Through
+            <span>Innovation</span>
+        </h2>
+
+        <p>
+
+            Infinyt3D helps schools, colleges and makers
+            transform ideas into reality using Robotics,
+            Artificial Intelligence, 3D Printing and STEAM
+            education.
+
+        </p>
+
+        <div class="about-boxes">
+
+            <div class="box">
+
+                <h3 class="count" data-target="10">0</h3>
+
+                <p>Insitute</p>
+
+            </div>
+
+            <div class="box">
+
+                <h3 class="count" data-target="10000">0</h3>
+
+                <p>Students</p>
+
+            </div>
+
+            <div class="box">
+
+                <h3 class="count" data-target="5000">0</h3>
+
+                <p>Projects</p>
+
+            </div>
+
+            <div class="box">
+
+                <h3 class="count" data-target="25">0</h3>
+
+                <p>Awards</p>
+
+</div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ================= STEAM LAB ================= -->
+
+<section class="steam">
+
+    <div class="steam-title">
+
+        <h5>OUR STEAM LAB</h5>
+
+        <h2>Learn Through <span>Innovation</span></h2>
+
+        <p>
+            Discover hands-on learning with Robotics,
+            AI, Coding, IoT and 3D Printing.
+        </p>
+
+    </div>
+
+    <div class="steam-grid">
+
+        <div class="steam-card">
+
+            <div class="steam-icon">🤖</div>
+
+            <h3>Robotics</h3>
+
+            <p>
+                Design, build and program robots using
+                sensors, motors and controllers.
+            </p>
+
+            <a href="#">Explore →</a>
+
+        </div>
+
+        <div class="steam-card">
+
+            <div class="steam-icon">🖨️</div>
+
+            <h3>3D Printing</h3>
+
+            <p>
+                Turn digital ideas into physical models
+                using advanced 3D printing technology.
+            </p>
+
+            <a href="#">Explore →</a>
+
+        </div>
+
+        <div class="steam-card">
+
+            <div class="steam-icon">💻</div>
+
+            <h3>Coding</h3>
+
+            <p>
+                Learn programming through fun projects
+                and real-world challenges.
+            </p>
+
+            <a href="#">Explore →</a>
+
+        </div>
+
+        <div class="steam-card">
+
+            <div class="steam-icon">🧠</div>
+
+            <h3>Artificial Intelligence</h3>
+
+            <p>
+                Explore AI, Machine Learning and smart
+                automation for future technologies.
+            </p>
+
+            <a href="#">Explore →</a>
+
+        </div>
+
+        
+
+        <div class="steam-card">
+
+            <div class="steam-icon">⚡</div>
+
+            <h3>Electronics</h3>
+
+            <p>
+                Learn circuits, components and embedded
+                systems through practical experiments.
+            </p>
+
+            <a href="#">Explore →</a>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ================= WHY CHOOSE US ================= -->
+
+<section class="why">
+
+    <div class="why-header">
+
+        <h5>WHY CHOOSE US</h5>
+
+        <h2>Why Schools Choose <span>Infinyt3D</span></h2>
+
+        <p>
+            We provide complete STEAM education solutions that combine
+            robotics, coding, AI, IoT and 3D printing into one powerful learning experience.
+        </p>
+
+    </div>
+
+    <div class="why-grid">
+
+        <div class="why-card">
+            <div class="why-icon">🏫</div>
+            <h3>School Ready</h3>
+            <p>
+                Complete STEAM Lab setup for schools and colleges.
+            </p>
+        </div>
+
+        <div class="why-card">
+            <div class="why-icon">👨‍🏫</div>
+            <h3>Teacher Training</h3>
+            <p>
+                Professional workshops and certification programs.
+            </p>
+        </div>
+
+        <div class="why-card">
+            <div class="why-icon">🤖</div>
+            <h3>Hands-on Learning</h3>
+            <p>
+                Students build real projects instead of only theory.
+            </p>
+        </div>
+
+       
+
+        <div class="why-card">
+            <div class="why-icon">🧠</div>
+            <h3>AI & IoT</h3>
+            <p>
+                Future-ready technologies for the next generation.
+            </p>
+        </div>
+
+        <div class="why-card">
+            <div class="why-icon">🚀</div>
+            <h3>Innovation</h3>
+            <p>
+                Inspire creativity through project-based education.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+<!-- ================= STUDENT PROJECTS ================= -->
+
+<section class="projects">
+
+    <div class="projects-header">
+
+        <h5>OUR PROJECTS</h5>
+
+        <h2>Student <span>Innovation Gallery</span></h2>
+
+        <p>
+            Real projects created by students using Robotics,
+            AI, IoT and 3D Printing.
+        </p>
+
+    </div>
+
+    <div class="projects-grid">
+
+        <div class="project-card">
+
+            <img src="https://alexnld.com/wp-content/uploads/2015/02/SKU103805h.jpg" alt="">
+
+            <div class="overlay">
+
+                <h3>Robot Car</h3>
+
+                <p>Arduino Robotics</p>
+
+            </div>
+
+        </div>
+
+        <div class="project-card">
+
+            <img src="house.png" alt="">
+
+            <div class="overlay">
+
+                <h3>3D Printed House</h3>
+
+                <p>Eureka Printer</p>
+
+            </div>
+
+        </div>
+
+        
+        
+
+        
+
+        <div class="project-card">
+
+            <img src="data:image/webp;base64,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" alt="">
+
+            <div class="overlay">
+
+                <h3>Drone</h3>
+
+                <p>STEM Innovation</p>
+
+            </div>
+
+        </div>
+
+        <div class="project-card">
+
+            <img src="ChatGPT Image Jul 13, 2026, 02_03_47 PM.png" alt="">
+
+            <div class="overlay">
+
+                <h3>3D Prototype</h3>
+
+                <p>Product Design</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ================= TESTIMONIALS ================= -->
+
+<section class="testimonials">
+
+    <div class="testimonial-header">
+
+        <h5>TESTIMONIALS</h5>
+
+        <h2>What Our <span>Customers Say</span></h2>
+
+        <p>
+            Hear from schools, teachers and students who use Infinyt3D.
+        </p>
+
+    </div>
+
+    <div class="testimonial-slider">
+
+        <div class="testimonial-track">
+
+            <div class="testimonial-card">
+
+                <img src="steam lab/ChatGPT Image Jul 13, 2026, 02_41_34 PM.png" alt="">
+
+                <h3>Mr. Sam</h3>
+
+                <h4>STEM Teacher</h4>
+
+                <div class="stars">
+                    ⭐⭐⭐⭐⭐
+                </div>
+
+                <p>
+                    Infinyt3D has transformed our classroom.
+                    Students love robotics and 3D printing.
+                </p>
+
+            </div>
+
+            <div class="testimonial-card">
+
+                <img src="Screenshot 2026-07-04 123827.png" alt="">
+
+                <h3>    ANWYL  Fernandes </h3>
+
+                <h4>Student</h4>
+
+                <div class="stars">
+                    ⭐⭐⭐⭐⭐
+                </div>
+
+                <p>
+                    Building robots and printing our own models
+                    has been an amazing learning experience.
+                </p>
+
+            </div>
+
+            <div class="testimonial-card">
+
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5iRC5na7SOSueiHQDVDyRu25Z0uVfUgBPKEpv-UskLqbA2hXw1baPXQA&s=10" alt="">
+
+                <h3>Fr.Basil Vago SJ</h3>
+
+                <h4>Principal</h4>
+
+                <div class="stars">
+                    ⭐⭐⭐⭐⭐
+                </div>
+
+                <p>
+                    The complete STEAM Lab setup exceeded our
+                    expectations. Excellent support and training.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-logo">
+
+        <h2>Infinyt<span>3D</span></h2>
+
+        <p>Imagine • Innovate • Inspire</p>
+
+    </div>
+
+    <div class="footer-links">
+
+        <a href="#">Home</a>
+
+        <a href="#">Products</a>
+
+        <a href="#">STEAM Lab</a>
+
+        <a href="#">Projects</a>
+
+        <a href="#">Contact</a>
+
+    </div>
+
+    <div class="social">
+
+        <a href="#">🌐</a>
+
+        <a href="#">📘</a>
+
+        <a href="#">📷</a>
+
+        <a href="#">▶️</a>
+
+    </div>
+
+    <hr>
+
+    <p class="copyright">
+        © 2026 Infinyt3D. All Rights Reserved.
+    </p>
+
+</footer>
+<input type="file" id="zipFile" accept="steam lab.zip">
+<button onclick="uploadZip()">Upload ZIP</button>
+<script src="p.js"></script>
+
+</body>
+
+</html>
